@@ -1,25 +1,37 @@
-# Insurance KPI Analytics Dashboard
+# Insurance Performance & Claims Analytics Dashboard
 
-Interactive Power BI dashboard analysing insurance policy performance, claims, customer activity, and operational KPIs.
+## Project Overview
+
+This interactive Power BI dashboard provides an executive-level overview of insurance policy performance, claims analytics, customer activity, and operational KPIs.
+
+The dashboard focuses on premium analysis, claim trends, policy performance, customer segmentation, claim approval monitoring, and operational insights to support data-driven business decision-making.
+
+---
 
 ## Features
 
-- Premium and claims analysis
-- Claim ratio KPI
-- Active vs inactive policy analysis
-- Policy type performance
-- Claims status tracking
-- Customer demographic analysis
-- Interactive slicers and filters
-- DAX measures and KPI calculations
+- Premium & Claims Analysis
+- Claim Ratio KPI Monitoring
+- Active vs Inactive Policy Analysis
+- Policy Type Performance Tracking
+- Claims Status Analysis
+- Customer Demographic Insights
+- Monthly Claims Trend Analysis
+- Claims Decomposition Analysis
+- Interactive Slicers & Filters
+- DAX Measures & KPI Calculations
+
+---
 
 ## Technologies Used
 
-- Power BI
+- Power BI Desktop
 - DAX
 - Power Query
-- KPI Analytics
-- Insurance Analytics
+- Excel
+- Insurance KPI Analytics
+
+---
 
 ## Dashboard KPIs
 
@@ -29,10 +41,73 @@ Interactive Power BI dashboard analysing insurance policy performance, claims, c
 - Average Claim Amount
 - Approved Claims %
 - Claim Ratio %
+- Total Policies
+
+---
+
+## Sample DAX Measures
+
+### Claim Ratio %
+
+```DAX
+Claim Ratio % =
+DIVIDE(
+    [Claim Amount],
+    [Premium Amount]
+)
+```
+
+### Approved Claims %
+
+```DAX
+Approved Claims % =
+DIVIDE(
+    CALCULATE(
+        COUNT(InsuranceData[ClaimStatus]),
+        InsuranceData[ClaimStatus] = "Approved"
+    ),
+    COUNT(InsuranceData[ClaimStatus])
+)
+```
+
+### Claim Amount
+
+```DAX
+Claim Amount =
+SUM(InsuranceData[ClaimAmount])
+```
+
+---
 
 ## Dashboard Preview
 
-Dashboard screenshots available in the screenshots folder.
+![Dashboard Preview](screenshots/dashboard-preview.png)
+
+---
+
+## Repository Structure
+
+- dataset/ → Sample insurance dataset
+- pbix/ → Power BI dashboard file
+- screenshots/ → Dashboard preview images
+
+---
+
+## Skills Demonstrated
+
+- Business Intelligence Reporting
+- KPI Dashboard Development
+- Insurance Analytics
+- Data Visualization
+- DAX & Time Intelligence
+- Interactive Dashboard Design
+- Executive Reporting
+- Trend & Segmentation Analysis
+
+---
 
 ## Author
+
 Satheesh Gurusamy
+
+This project was created as part of my Business Intelligence and Data Analytics portfolio to demonstrate Power BI, DAX, KPI reporting, and enterprise dashboard storytelling capabilities.
